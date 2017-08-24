@@ -8,11 +8,25 @@ body {
   background-color: black;
 }
 
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .site-container {
   display: flex;
   flex-flow: row nowrap;
   max-width: 960px;
-  justify-content: center;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.25rem;
 }
 /*Header Style*/
 header {
@@ -27,33 +41,49 @@ header {
 
 .header-bar {
   width: 100%;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
 }
 
 .company-logo {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+  justify-content: flex-start;
   padding-left: 24px;
   height: 32px;
-  margin: auto 0;
+  width: 33%;
+  margin: auto;
 }
 
-#header-links {
+#header-links-text, #header-links-imgs {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
-  padding-right: 24px;
-  margin: auto 0;
+  padding: 0 24px;
+  margin: auto;
   height: 32px;
+  width: 100%;
 }
 
-#header-links span, #header-links img {
+#header-links-text {
+  display: none;
+}
+
+#header-links-imgs {
+  display: flex;
+}
+
+#header-links-text span {
   padding-left: 16px;
 }
 img {
   /*border: 1px solid black;*/
+}
+
+.logo-text {
+  display: none;
 }
 
 #colmar {
@@ -64,15 +94,66 @@ img {
   color: grey;
 }
 
-.desktop {
-  display: none;
+@media only screen and (min-width: 425px) {
+
 }
 
-@media only screen and (min-width: 650px) {
-  .desktop {
+@media only screen and (min-width: 770px) {
+  .company-logo {
+    width: 100%;
+  }
+  .logo-text {
+    display: block;
+  }
+  #header-links-text {
     display: flex;
   }
-  .mobile {
+
+  #header-links-imgs {
     display: none;
   }
+}
+
+/*Banner Style*/
+
+#banner-container {
+  background-color: grey;
+  position: relative;
+  top: 64px;
+}
+
+.banner {
+  width: 100%;
+}
+
+.banner-image {
+  max-width: 60%;
+    margin: 32px 24px;
+}
+#banner-img {
+  width: 100%;
+}
+
+.banner-text {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  line-height: 1.2;
+  width: 25%;
+}
+
+.banner-text h1, .banner-text h2 {
+  padding: 0.5rem 0;
+}
+
+.start-here {
+  color: white;
+  background-color: darkgrey;
+  width: 100%;
+  text-align: center;
+  line-height: 2;
+}
+
+.start-here span {
+  padding: 8px auto;
 }
