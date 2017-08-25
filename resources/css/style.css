@@ -5,13 +5,16 @@ html {
 
 body {
   font-family: Arial, sans-serif;
-  background-color: black;
+  width: 100%;
 }
 
 section {
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 100%;
+  position: relative;
+  top: 64px;
 }
 
 .site-container {
@@ -26,6 +29,11 @@ h1 {
 }
 
 h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+h3 {
   font-size: 1.25rem;
 }
 /*Header Style*/
@@ -50,9 +58,8 @@ header {
   flex-flow: row nowrap;
   align-items: center;
   justify-content: flex-start;
-  padding-left: 24px;
   height: 32px;
-  width: 33%;
+  width: 100%;
   margin: auto;
 }
 
@@ -116,19 +123,18 @@ img {
 
 /*Banner Style*/
 
-#banner-container {
+#banner-section {
   background-color: grey;
   position: relative;
-  top: 64px;
 }
 
 .banner {
-  width: 100%;
+  max-width: 100%;
+  flex-flow: column nowrap;
 }
 
 .banner-image {
-  max-width: 60%;
-    margin: 32px 24px;
+  max-width: 100%;
 }
 #banner-img {
   width: 100%;
@@ -139,11 +145,13 @@ img {
   flex-flow: column nowrap;
   justify-content: center;
   line-height: 1.2;
-  width: 25%;
+  max-width: 100%;
+  padding: 32px 16px;
 }
 
-.banner-text h1, .banner-text h2 {
+.banner-text h1, .banner-text h3 {
   padding: 0.5rem 0;
+  width: 100%;
 }
 
 .start-here {
@@ -156,4 +164,50 @@ img {
 
 .start-here span {
   padding: 8px auto;
+}
+
+@media screen only and (min-width: 600px) {
+  .banner-image {
+    margin: 32px 24px;
+    max-width: 60%;
+  }
+
+  .banner-text {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    line-height: 1.2;
+    width: 25%;
+  }
+}
+
+/*Information Style*/
+.information {
+  max-width: 100%;
+  padding: 32px 24px;
+  flex-flow: column wrap;
+}
+.article {
+  /*display: none;*/
+  max-width: 100%;
+}
+.article-image {
+  max-width: 100%;
+}
+
+.article h2 {
+  padding: 32px 0 24px 0;
+}
+
+#info-main-img {
+  width: 100%;
+}
+
+@media screen only and (min-width: 600px) {
+
+  .article {
+    display: flex;
+    width: 60%;
+    padding: 32px 24px;
+  }
 }
